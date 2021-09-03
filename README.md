@@ -45,21 +45,21 @@ Follow the steps mentioned below to get your dev instance running.
 
 1) Use the `pusher` to push a script to the task queue.
    ```
-   sqm-pusher -s "cat x.txt"
+   mlq-pusher -s "cat x.txt"
    ``` 
 1) Start the `executor` tool.
    ```
-   sqm-executor
+   mlq-executor
    ```
    If you want to start it as a background process, in Ubuntu run 
    ```
-   sqm-executor &
+   mlq-executor &
    ```
    
 ## Execution Model
 The executor fetches an object from the front of the queue and prepares a script as `PRE_SCRIPT + QUEUE_SCRIPT`. Here, `PRE_SCRIPT` can be given as input to the executor using the flag `-p` as shown below:
 ```shell script
-sqm-executor -p "path-to-the-file-containing-the-prescripts"
+mlq-executor -p "path-to-the-file-containing-the-prescripts"
 ```
 The sleeping interval for the executor to sleep in between tasks can be provided using the flag `-s`. By default it is 15s.
 The executor produces logs for every task it executes. The file path for this log file can be provided using the `-l` flag. By default it is located at `$HOME/sqm/logs.txt`.
