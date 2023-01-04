@@ -1,4 +1,4 @@
-### usage
+### Usage
 
 To install simple machine learning queue:
 
